@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   text-transform: capitalize;
-  font-family: "Indie Flower", cursive;
+  font-family: "Source Code Pro", monospace;
 }
 body {
   min-height: 100vh;
