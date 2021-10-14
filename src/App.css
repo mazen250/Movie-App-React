@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   text-transform: capitalize;
-  font-family: "Source Code Pro", monospace;
+  font-family: "Playfair Display", serif;
 }
 body {
   min-height: 100vh;
@@ -196,6 +196,28 @@ body {
     width: 100%;
     justify-content: center;
   }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 400;
+  }
+  .title h1 {
+    font-size: 12px;
+  }
+  #root > div > div.movieListContainer > div:nth-child(2) > h1 {
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: 400;
+  }
+  #root > div > div.movieListContainer > div:nth-child(3) > h1 {
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: 400;
+  }
+  #root > div > div.movieListContainer > div:nth-child(4) > h1 {
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: 400;
+  }
 }
 @media only screen and (max-width: 1500px) {
   .MovieCardContainer {
@@ -212,10 +234,11 @@ body {
 @media only screen and (max-width: 450px) {
   .MovieCardContainer {
     width: 200px;
-    min-height: 300px;
+    min-height: 350px;
   }
   .mainSearch {
     width: 120px;
     height: 28px;
+    font-weight: 400;
   }
 }
