@@ -1,38 +1,211 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+  font-family: "Indie Flower", cursive;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+.App {
+  text-align: center;
+  background-color: rgb(243, 243, 243);
+  min-height: 100vh;
+}
+.header {
+  background-color: rgb(6, 6, 7);
+  color: aliceblue;
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.srchBtn {
+  width: 180px;
+  margin-top: 20px;
+  border-radius: 3px;
+  border: black 1px solid;
+  font-size: 15px;
+  font-weight: 600;
+  padding-left: 10px;
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+}
+.listContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.movieListContainer {
+  margin-bottom: 20px;
+}
+
+.MovieCardContainer {
+  width: 200px;
+  min-height: 370px;
+  display: flex;
+  overflow: hidden;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  transition: all 0.4s;
+  border-radius: 5px;
+}
+
+.MovieCardContainer:hover {
+  transform: scale(1.03);
+}
+
+.MovieCardContainer .overview {
+  position: absolute;
+  background-color: rgba(240, 238, 238, 0.8);
+  color: black;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow: auto;
+  max-height: 100%;
+  min-height: 50%;
+  display: none;
+  border-radius: 5px;
+  transform: translateY(102%);
+  transition: all 0.5s ease-in-out;
+  font-weight: 500;
+}
+
+.MovieCardContainer:hover .overview {
+  display: block;
+  transform: translateY(0%);
+}
+
+.MovieCardContainer img {
+  max-width: 100%;
+}
+.title {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  max-height: 50px;
+}
+.title h1 {
+  font-size: 15px;
+  font-weight: 700;
+}
+.title h3 {
+  font-size: 12px;
+}
+.rating {
+  display: flex;
+  align-items: center;
+}
+.rating img {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+
+#root > div > div.footer {
+  width: 100%;
+  height: 60px;
+  background-color: rgba(31, 31, 31, 1);
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: auto;
+  top: 100%;
+  position: sticky;
+}
+.footer .socialMedia {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
 }
 
-.App-link {
-  color: #61dafb;
+.footer .socialMedia a {
+  text-decoration: none;
+
+  color: rgb(219, 219, 216);
+}
+.footer .socialMedia svg {
+  font-size: 30px;
+}
+.searchlistContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+.search {
+  width: 100px;
+  background-color: rgb(39, 39, 39) !important;
+  color: aliceblue;
+  margin-bottom: 30px;
+  font-weight: 600;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#root > div > div.header > div > a {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.mainSearch {
+  width: 150px;
+  height: 30px;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 17px;
+  cursor: pointer;
+  transition: all 0.4s;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.mainSearch:hover {
+  transform: scale(1.05);
+}
+
+@media only screen and (max-width: 450px) {
+  .MovieCardContainer {
+    width: 230px;
+    min-height: 330px;
   }
-  to {
-    transform: rotate(360deg);
+  #root > div > div.header > div > a {
+    font-size: 15px;
+  }
+  .footer .socialMedia {
+    width: 70%;
+  }
+  .searchlistContainer {
+    width: 100%;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 1500px) {
+  .MovieCardContainer {
+    width: 300px;
+    min-height: 500px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .MovieCardContainer {
+    width: 250px;
+    min-height: 430px;
   }
 }
