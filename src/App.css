@@ -209,3 +209,13 @@ body {
     min-height: 430px;
   }
 }
+@media only screen and (max-width: 450px) {
+  .MovieCardContainer {
+    width: 200px;
+    min-height: 300px;
+  }
+  .mainSearch {
+    width: 120px;
+    height: 28px;
+  }
+}
